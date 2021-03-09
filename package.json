@@ -1,0 +1,23 @@
+{
+  "name": "salt-hackday-project",
+  "version": "1.0.0",
+  "description": "salt-hackday-project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently -n '8080,3000' -c 'yellow,blue' \"cd backend && npm run dev\" \"cd frontend && npm start\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukas-schmid/salt-hackday-project.git"
+  },
+  "author": "Lukas Schmid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lukas-schmid/salt-hackday-project/issues"
+  },
+  "homepage": "https://github.com/lukas-schmid/salt-hackday-project#readme",
+  "dependencies": {
+    "concurrently": "^6.0.0"
+  }
+}

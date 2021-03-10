@@ -49,6 +49,4 @@ describe("test wrong endpoint", () => {
       });
   });
 });
-
-// test query formatter https://api.spoonacular.com/recipes/findByIngredients?ingredients=apples,+flour,+sugar&number=2
 // https://www.digitalocean.com/community/tutorials/test-a-node-restful-api-with-mocha-and-chai

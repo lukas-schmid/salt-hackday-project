@@ -1,6 +1,6 @@
 import React from "react";
 
-const fridge = () => {
+const Fridge = () => {
   return (
     <div>
       <h1>fridge main container</h1>
@@ -10,4 +10,4 @@ const fridge = () => {
   );
 };
 
-export default fridge;
+export default Fridge;

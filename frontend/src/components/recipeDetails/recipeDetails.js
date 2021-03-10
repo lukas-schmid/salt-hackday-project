@@ -1,11 +1,11 @@
 import React from "react";
 
-const recipeDetails = () => {
+const RecipeDetails = () => {
   return (
     <div>
-      <h1>recipeDetails</h1>
+      <h1>RecipeDetails</h1>
     </div>
   );
 };
 
-export default recipeDetails;
+export default RecipeDetails;

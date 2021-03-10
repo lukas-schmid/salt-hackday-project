@@ -1,3 +1,9 @@
 const { expect } = require("chai");
+const { fetchData } = require("./helperFunctions");
 
-// test query formatter https://api.spoonacular.com/recipes/findByIngredients?ingredients=apples,+flour,+sugar&number=2
+describe("helperFunctions", () => {
+  it("fetchData successful", async () => {
+    const data = await fetchData("https://jsonplaceholder.typicode.com/todos");
+    expect(data).to.be.a("array");
+  });
+});

@@ -1,10 +1,20 @@
 import React from "react";
+import logo from "../../images/logo.png";
+import "./Navbar.css";
+import HomeIcon from "@material-ui/icons/Home";
 
 const Navbar = () => {
   return (
-    <div>
-      <h1>Navbar</h1>
-    </div>
+    <nav className="app__navbar">
+      <div className="navbar__home">
+        <HomeIcon className="navbar__home--icon" />
+      </div>
+      <div className="navbar__header">
+        <img className="navbar__header--logo" src={logo} alt="logo" />
+        <h1 className="navbar__header--name">Food-App</h1>
+      </div>
+      <div className="navbar__header--theme">theme</div>
+    </nav>
   );
 };
 

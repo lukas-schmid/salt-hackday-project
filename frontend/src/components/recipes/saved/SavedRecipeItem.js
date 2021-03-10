@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SavedRecipeItem = () => {
   return (
@@ -8,9 +9,11 @@ const SavedRecipeItem = () => {
       </div>
       <div className="savedRecipe__info">
         <p className="savedRecipe__info--name">Name of the recipe</p>
-        <button className="savedRecipe__info--button" type="button">
-          Open
-        </button>
+        <Link to="/recipe/testid">
+          <button className="savedRecipe__info--button" type="button">
+            Open
+          </button>
+        </Link>
       </div>
     </article>
   );

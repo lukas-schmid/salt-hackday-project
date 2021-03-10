@@ -3,6 +3,6 @@ import App from "./App";
 
 test("App", () => {
   render(<App />);
-  const fridge = screen.getByText(/your fridge/i);
-  expect(fridge).toBeInTheDocument();
+  const fridge = screen.getAllByText(/your fridge/i);
+  expect(fridge[0]).toBeInTheDocument();
 });

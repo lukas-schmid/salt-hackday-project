@@ -35,7 +35,7 @@ const App = () => {
             <Route path="/shoppinglist">
               <ShoppingList />
             </Route>
-            <Route path="/recipes/:id">
+            <Route path="/recipe/:id">
               <RecipeDetails />
             </Route>
           </Switch>

@@ -4,7 +4,7 @@ import RecipeDetails from "./RecipeDetails";
 test("RecipeDetails", () => {
   render(<RecipeDetails />);
   const recipeImg = screen.getByRole("img");
-  const saveButton = screen.getByRole("button");
+  const saveButton = screen.getAllByRole("button");
   expect(recipeImg).toBeInTheDocument();
-  expect(saveButton).toBeInTheDocument();
+  expect(saveButton[0]).toBeInTheDocument();
 });

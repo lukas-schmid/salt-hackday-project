@@ -8,9 +8,6 @@ const SearchResults = () => {
         <h1>Best Matching Results</h1>
       </header>
       <SearchRecipeItem />
-      <footer className="searchResult__footer">
-        <button type="button">Search</button>
-      </footer>
     </>
   );
 };

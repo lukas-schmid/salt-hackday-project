@@ -26,17 +26,17 @@ const App = () => {
             <Route path="/recipes">
               <Recipes />
             </Route>
-            <Route path="/shoppinglist">
-              <ShoppingList />
-            </Route>
-            <Route path="/recipes/:id">
-              <RecipeDetails />
-            </Route>
             <Route path="/savedRecipes">
               <SavedRecipes />
             </Route>
             <Route path="/findRecipes">
               <FindRecipes />
+            </Route>
+            <Route path="/shoppinglist">
+              <ShoppingList />
+            </Route>
+            <Route path="/recipes/:id">
+              <RecipeDetails />
             </Route>
           </Switch>
         </main>

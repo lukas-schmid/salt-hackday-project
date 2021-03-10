@@ -1,10 +1,14 @@
 import React from "react";
+import SearchRecipes from "./SearchRecipe";
+import SearchResults from "./SearchResults";
 
 const FindRecipes = () => {
+  // useState with boolean here to render SearchRecipes or when ingredients selected -> SearchResult
   return (
-    <div>
-      <h1>find recipes</h1>
-    </div>
+    <section className="findRecipes">
+      <SearchRecipes />
+      <SearchResults />
+    </section>
   );
 };
 

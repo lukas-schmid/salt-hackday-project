@@ -1,10 +1,11 @@
 import React from "react";
+import SavedRecipeItem from "./SavedRecipeItem";
 
 const SavedRecipes = () => {
   return (
-    <div>
-      <h1>saved recipes</h1>
-    </div>
+    <section className="savedRecipes">
+      <SavedRecipeItem />
+    </section>
   );
 };
 

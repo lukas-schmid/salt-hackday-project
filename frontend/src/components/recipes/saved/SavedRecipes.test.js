@@ -4,6 +4,6 @@ import SavedRecipes from "./SavedRecipes";
 test("SavedRecipes", () => {
   const items = [{ name: "Unused Item" }, { name: "Used Item" }];
   render(<SavedRecipes items={items} />);
-  const listItems = screen.getAllByRole("listitem");
+  const listItems = screen.getAllByRole("article");
   expect(listItems).toHaveLength(2);
 });

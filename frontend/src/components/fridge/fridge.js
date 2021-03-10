@@ -1,12 +1,13 @@
 import React from "react";
+import InputForm from "./InputForm";
+import FoodList from "./FoodList";
 
 const Fridge = () => {
   return (
-    <div>
-      <h1>fridge main container</h1>
-      {/* inputForm */}
-      {/* foodlist */}
-    </div>
+    <section className="fridgePage">
+      <InputForm />
+      <FoodList />
+    </section>
   );
 };
 

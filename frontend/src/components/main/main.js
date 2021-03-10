@@ -1,19 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Main.css";
 
 const Main = () => {
   return (
-    <div>
-      <Link to="/fridge">
-        <h1>Fridge</h1>
-      </Link>
-      <Link to="/recipes">
-        <h1>Recipes</h1>
-      </Link>
-      <Link to="shoppinglist">
-        <h1>Shopping list</h1>
-      </Link>
-    </div>
+    <section className="mainPage">
+      <article className="mainPage__fridge">
+        <Link to="/fridge">
+          <p>Your Fridge</p>
+        </Link>
+      </article>
+      <article className="mainPage__recipes">
+        <Link to="/recipes">
+          <p>Recipes</p>
+        </Link>
+      </article>
+      <article className="mainPage__shoppingList">
+        <Link to="shoppinglist">
+          <p>Shopping list</p>
+        </Link>
+      </article>
+    </section>
   );
 };
 

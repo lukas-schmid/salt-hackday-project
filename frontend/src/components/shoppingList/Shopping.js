@@ -1,10 +1,13 @@
 import React from "react";
+import InputForm from "./InputForm";
+import ShoppingList from "./ShoppingList";
 
 const Shopping = () => {
   return (
-    <div>
-      <h1>shopping list</h1>
-    </div>
+    <section className="shoppingPage">
+      <InputForm />
+      <ShoppingList />
+    </section>
   );
 };
 

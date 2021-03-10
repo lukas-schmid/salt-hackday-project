@@ -1,8 +1,8 @@
-img {
-  width: 50px;
-  height: auto;
-}
-
 .app__navbar {
   background-color: grey;
+}
+
+.navbar__header--logo {
+  width: 50px;
+  height: auto;
 }

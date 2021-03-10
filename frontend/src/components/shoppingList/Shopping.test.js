@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import Fridge from "./Fridge";
+import Shopping from "./Shopping";
 
-test("Fridge", () => {
-  render(<Fridge />);
+test("Shopping", () => {
+  render(<Shopping />);
   const label = screen.getByLabelText(/Add food/i);
   const input = screen.getByRole("textbox");
   expect(label).toBeInTheDocument();

@@ -1,10 +1,11 @@
 import React from "react";
+import ShoppingItem from "./ShoppingItem";
 
 const ShoppingList = () => {
   return (
-    <div>
-      <h1>sopping list</h1>
-    </div>
+    <section className="shoppingList">
+      <ShoppingItem />
+    </section>
   );
 };
 

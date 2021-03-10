@@ -2,12 +2,15 @@ import React from "react";
 import logo from "../../images/logo.png";
 import "./Navbar.css";
 import HomeIcon from "@material-ui/icons/Home";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className="app__navbar">
       <div className="navbar__home">
-        <HomeIcon className="navbar__home--icon" />
+        <Link to="/">
+          <HomeIcon className="navbar__home--icon" />
+        </Link>
       </div>
       <div className="navbar__header">
         <img className="navbar__header--logo" src={logo} alt="logo" />

@@ -1,12 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Recipes = () => {
   return (
-    <div>
-      <h1>recipes</h1>
-      {/* saved recipes */}
-      {/* find new recipes */}
-    </div>
+    <section className="recipesPage">
+      <article className="recipesPage__savedRecipes">
+        <Link to="/savedRecipes">
+          <p>Saved recipes</p>
+        </Link>
+      </article>
+      <article className="recipesPage__findRecipes">
+        <Link to="/findRecipes">
+          <p>find new Recipes</p>
+        </Link>
+      </article>
+    </section>
   );
 };
 

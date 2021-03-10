@@ -1,10 +1,11 @@
 import React from "react";
+import FoodItem from "./FoodItem";
 
 const FoodList = () => {
   return (
-    <div>
-      <h1>Food list from fridge</h1>
-    </div>
+    <section className="fridgeList">
+      <FoodItem />
+    </section>
   );
 };
 

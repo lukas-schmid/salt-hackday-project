@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Checkboxes from "./Checkboxes";
+import { getLocalStorage } from "../../../helperFunctions/helperFunctions";
 import "./SearchRecipe.css";
 
 const SearchRecipe = () => {
+  const [availableFood, setAvailableFood] = useState([]);
+
+  useEffect(() => {
+    setAvailableFood(getLocalStorage("fridge"));
+  }, []);
+
   return (
     <>
       <header className="searchRecipe__header">
@@ -18,7 +25,7 @@ const SearchRecipe = () => {
           />
           <label htmlFor="selectAll">Select All</label>
         </div>
-        <Checkboxes />
+        <Checkboxes items={availableFood} />
       </article>
       <footer className="searchRecipe__footer">
         <button type="button">Search</button>

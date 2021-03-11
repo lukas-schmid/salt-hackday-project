@@ -3,5 +3,5 @@ export const storeLocalStorage = (key, strValue) => {
 };
 
 export const getLocalStorage = (key) => {
-  return localStorage.getItem(key).split(",");
+  return localStorage.getItem(key) ? localStorage.getItem(key).split(",") : [];
 };

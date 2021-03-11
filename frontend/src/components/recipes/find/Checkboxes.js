@@ -1,12 +1,21 @@
 import React from "react";
 
-function Checkboxes() {
-  return (
-    <div className="searchRecipe__checkboxList--row">
-      <input type="checkbox" id="foodItem1" name="foodItem1" value="Milk" />
-      <label htmlFor="foodItem1"> Milk</label>
-    </div>
-  );
+function Checkboxes({ items }) {
+  return items.length === 0
+    ? null
+    : items.map((food, index) => {
+        return (
+          <div key={index} className="searchRecipe__checkboxList--row">
+            <input
+              type="checkbox"
+              id={`food_${index}`}
+              name={`foodItem_${index}`}
+              value={food}
+            />
+            <label htmlFor={`food_${index}`}> {food}</label>
+          </div>
+        );
+      });
 }
 
 export default Checkboxes;

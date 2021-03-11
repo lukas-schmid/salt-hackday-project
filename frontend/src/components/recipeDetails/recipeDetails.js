@@ -21,16 +21,27 @@ const RecipeDetails = ({ match }) => {
   const saveRecipe = () => {
     const recipeData = apiResponse;
     recipeData.missing = getLocalStorage("missing");
+
     if (!localStorage.getItem("savedRecipes")) {
-      storeLocalStorage("savedRecipes", JSON.stringify(recipeData));
-    } else if (
-      [localStorage.getItem("savedRecipes")].filter((obj) => obj.id === id)
-        .length === 0
-    ) {
-      const recipesArr = [JSON.parse(localStorage.getItem("savedRecipes"))];
-      recipesArr.push(recipeData);
-      console.log(recipesArr);
-      storeLocalStorage("savedRecipes", JSON.stringify(recipesArr));
+      storeLocalStorage("savedRecipes", JSON.stringify([recipeData]));
+    } else {
+      const currentStorage = JSON.parse(localStorage.getItem("savedRecipes"));
+      storeLocalStorage(
+        "savedRecipes",
+        JSON.stringify([...currentStorage, recipeData])
+      );
+    }
+  };
+
+  const addToShoppingList = () => {
+    const missingIngredients = getLocalStorage("missing");
+    if (localStorage.getItem("shoppingList")) {
+      const shoppingList = getLocalStorage("shoppingList");
+      const strValue = shoppingList.concat(missingIngredients).join(",");
+      storeLocalStorage("shoppingList", strValue);
+    } else {
+      const strValue = missingIngredients.join(",");
+      storeLocalStorage("shoppingList", strValue);
     }
   };
 
@@ -57,13 +68,6 @@ const RecipeDetails = ({ match }) => {
           </ul>
         </section>
         <section className="recipeDetails__description">
-          <button
-            onClick={() => {
-              saveRecipe();
-            }}
-          >
-            test
-          </button>
           {apiResponse.analyzedInstructions.length === 0 ? (
             <p>{apiResponse.instructions}</p>
           ) : (
@@ -76,8 +80,17 @@ const RecipeDetails = ({ match }) => {
           <p>list of missing ingredients</p>
         </section>
         <footer className="recipeDetails__description">
-          <button type="button">Add to shopping list</button>
-          <button type="button">Save</button>
+          <button onClick={() => addToShoppingList()} type="button">
+            Add to shopping list
+          </button>
+          <button
+            onClick={() => {
+              saveRecipe();
+            }}
+            type="button"
+          >
+            Save
+          </button>
         </footer>
       </article>
     </section>

@@ -38,11 +38,13 @@ const SearchRecipeItem = ({ searchQuery }) => {
             </div>
             <div className="SearchRecipeItem__info">
               <p className="SearchRecipeItem__info--name">{data.title}</p>
-              <Link to={`/recipe/${data.id}`}>
+              <Link
+                to={`/recipe/${data.id}`}
+                onClick={() => saveMissingIngredients(data.id)}
+              >
                 <button
                   className="SearchRecipeItem__info--button"
                   type="button"
-                  onClick={saveMissingIngredients(data.id)}
                 >
                   Open
                 </button>

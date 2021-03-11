@@ -3,7 +3,6 @@ import SearchRecipes from "./SearchRecipe";
 import SearchResults from "./SearchResults";
 
 const FindRecipes = () => {
-  // useState with boolean here to render SearchRecipes or when ingredients selected -> SearchResult
   const [searchQuery, setSearchQuery] = useState([]);
 
   const handleSearchQuery = (query) => {

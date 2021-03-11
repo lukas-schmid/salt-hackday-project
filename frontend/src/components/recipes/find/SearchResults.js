@@ -1,5 +1,6 @@
 import React from "react";
 import SearchRecipeItem from "./SearchRecipeItem";
+import "./SearchResults.css";
 
 const SearchResults = () => {
   return (

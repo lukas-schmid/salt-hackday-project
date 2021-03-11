@@ -1,5 +1,6 @@
 import React from "react";
 import SavedRecipeItem from "./SavedRecipeItem";
+import "./SavedRecipes.css";
 
 const SavedRecipes = () => {
   return (

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { storeLocalStorage } from "../../../helperFunctions/helperFunctions";
 
 const SearchRecipeItem = ({ searchQuery }) => {
   const [apiResponse, setApiResponse] = useState([]);
@@ -11,8 +12,21 @@ const SearchRecipeItem = ({ searchQuery }) => {
     const encodedQuery = convertQuerytoURL(searchQuery);
     fetch(`http://localhost:8080/api/recipes?ingredients=${encodedQuery}`)
       .then((response) => response.json())
-      .then((data) => setApiResponse(data));
+      .then((data) => {
+        setApiResponse(data);
+        console.log(data);
+      });
   }, [searchQuery]);
+
+  const saveMissingIngredients = (id) => {
+    const recipe = apiResponse.filter((obj) => obj.id === id);
+    const missingIngredients =
+      recipe[0].missedIngredients.length === 0
+        ? null
+        : recipe[0].missedIngredients.map((ingredient) => ingredient.name);
+    const strValue = missingIngredients?.join(",");
+    storeLocalStorage("missing", strValue);
+  };
 
   return apiResponse.length === 0
     ? null
@@ -28,6 +42,7 @@ const SearchRecipeItem = ({ searchQuery }) => {
                 <button
                   className="SearchRecipeItem__info--button"
                   type="button"
+                  onClick={saveMissingIngredients(data.id)}
                 >
                   Open
                 </button>

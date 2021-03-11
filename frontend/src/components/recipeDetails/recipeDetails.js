@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 
 const RecipeDetails = ({ match }) => {
   const [apiResponse, setApiResponse] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const id = match.params.id;
@@ -10,11 +11,14 @@ const RecipeDetails = ({ match }) => {
       .then((response) => response.json())
       .then((data) => {
         setApiResponse(data);
+        setIsLoading(false);
         console.log(data);
       });
   }, [match.params.id]);
 
-  return (
+  return isLoading ? (
+    <p>loading...</p>
+  ) : (
     <section className="recipeDetailsPage">
       <article className="recipeDetails">
         <header className="recipeDetails__header">
@@ -25,20 +29,29 @@ const RecipeDetails = ({ match }) => {
         </section>
         <section className="recipeDetails__ingredients">
           <ul>
-            {apiResponse.extendedIngredients.length === 0
-              ? null
-              : apiResponse.extendedIngredients.map((ingredient, index) => {
-                  return <li key={index}>{ingredient.original}</li>;
-                })}
+            {apiResponse.extendedIngredients?.length === 0 ? (
+              <p>no ingredients available</p>
+            ) : (
+              apiResponse.extendedIngredients?.map((ingredient, index) => {
+                return <li key={index}>{ingredient.original}</li>;
+              })
+            )}
           </ul>
         </section>
         <section className="recipeDetails__description">
-          {apiResponse.analyzedInstructions.length !== 0 ? (
-            apiResponse.analyzedInstructions[0]?.steps.map((step, index) => {
+          <button
+            onClick={() =>
+              console.log(apiResponse.analyzedInstructions.length === 0)
+            }
+          >
+            test
+          </button>
+          {apiResponse.analyzedInstructions.length === 0 ? (
+            <p>{apiResponse.instructions}</p>
+          ) : (
+            apiResponse.analyzedInstructions[0].steps.map((step, index) => {
               return <p key={index}>{step.step}</p>;
             })
-          ) : (
-            <p>{apiResponse.instructions}</p>
           )}
         </section>
         <section className="recipeDetails__missingIngredients">

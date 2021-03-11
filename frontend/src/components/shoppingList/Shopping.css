@@ -1,8 +1,65 @@
 .shoppingPage {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   padding: 8px 8px;
 }
 
+.shoppingPage__header {
+  height: 70px;
+  margin: 5px 0px;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  line-height: 70px;
+  background-color: #2d2d2d;
+}
+
+.shoppingListInput {
+  height: 100px;
+  padding: 10px 10px;
+  margin: 5px 0px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #2d2d2d;
+}
+
+.shoppingListInputForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.shoppingListInputForm__label {
+  padding: 5px 0px;
+}
+
+.shoppingListInputForm--verticalAlign {
+  display: flex;
+}
+
+.shoppingListInputForm__input {
+  width: 100%;
+}
+
+.shoppingListInputForm__button {
+  height: 40px;
+  width: 40px;
+  margin-left: 5px;
+  background-color: red;
+  border: none;
+  font-size: 30px;
+}
+
+.shoppingList {
+  flex: 1;
+  overflow: auto;
+}
+
+.shoppingItem {
+  min-height: 80px;
+  margin: 5px 0px;
+  background-color: #2d2d2d;
+}
 /* .shoppingPage__header {
   margin: 0px 5px;
   padding: 20px 0px;

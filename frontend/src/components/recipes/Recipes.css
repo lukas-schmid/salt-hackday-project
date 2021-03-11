@@ -1,4 +1,29 @@
 .recipesPage {
   height: 100%;
   padding: 8px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.recipesPage__savedRecipes {
+  margin: 10px 10px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  max-height: 160px;
+  align-items: center;
+  font-size: 35px;
+  background-color: #2d2d2d;
+}
+
+.recipesPage__findRecipes {
+  margin: 10px 10px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  max-height: 160px;
+  align-items: center;
+  font-size: 35px;
+  background-color: #2d2d2d;
 }

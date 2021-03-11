@@ -12,7 +12,7 @@ const Recipes = () => {
       </article>
       <article className="recipesPage__findRecipes">
         <Link to="/findRecipes">
-          <p>find new Recipes</p>
+          <p>Find new recipes</p>
         </Link>
       </article>
     </section>

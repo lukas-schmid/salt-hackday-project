@@ -20,14 +20,6 @@ const Shopping = () => {
     setFoodStore(newFoodStore);
   };
 
-  // const toggleDone = (item) => {
-  //   item.done === false ? (item.done = true) : (item.done = false);
-  //   const index = this.state.toDoItems.findIndex((obj) => obj.id === item.id);
-  //   const newArray = [...this.state.toDoItems];
-  //   newArray[index] = item;
-  //   this.setState({ toDoItems: newArray });
-  // };
-
   const isFirstRun = useRef(true);
   useEffect(() => {
     if (isFirstRun.current) {

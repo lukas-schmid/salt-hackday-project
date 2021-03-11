@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SearchRecipes from "./SearchRecipe";
 import SearchResults from "./SearchResults";
+import "./FindRecipes.css";
 
 const FindRecipes = () => {
   const [searchQuery, setSearchQuery] = useState([]);

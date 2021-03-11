@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import InputForm from "./InputForm";
 import FoodList from "./FoodList";
+import { storeLocalStorage } from "../../helperFunctions/helperFunctions";
 import "./Fridge.css";
 
 const Fridge = () => {
@@ -15,6 +16,11 @@ const Fridge = () => {
     newFoodStore.splice(index, 1);
     setFoodStore(newFoodStore);
   };
+
+  useEffect(() => {
+    const strValue = foodStore.join(",");
+    storeLocalStorage("fridge", strValue);
+  }, [foodStore]);
 
   return (
     <section className="fridgePage">

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import InputForm from "./InputForm";
 import ShoppingList from "./ShoppingList";
+import { storeLocalStorage } from "../../helperFunctions/helperFunctions";
 import "./Shopping.css";
 
 const Shopping = () => {
@@ -15,6 +16,12 @@ const Shopping = () => {
     newFoodStore.splice(index, 1);
     setFoodStore(newFoodStore);
   };
+
+  useEffect(() => {
+    const strValue = foodStore.join(",");
+    storeLocalStorage("shoppingList", strValue);
+  }, [foodStore]);
+
   return (
     <section className="shoppingPage">
       <InputForm handleFoodInput={handleFoodInput} />

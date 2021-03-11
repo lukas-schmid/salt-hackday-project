@@ -1,8 +1,23 @@
+/* .fridgePage {
+  background-color: #000;
+} */
+
 .fridgePage {
   background-color: #000;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  overflow: hidden;
+  height: auto;
+  /* display: grid; */
 }
 
 .fridgePage__header {
+  margin: 0px 5px;
+  padding: 20px 0px;
+  text-align: center;
   color: #fff;
 }
 
@@ -37,12 +52,21 @@
   height: 50px;
 }
 
+/* .fridgeList {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 5px;
+  color: #fff;
+} */
 .fridgeList {
   display: flex;
   flex-direction: column;
   margin: 5px 5px;
-  background-color: #2d2d2d;
   color: #fff;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
 }
 
 .foodItem {
@@ -52,6 +76,8 @@
   justify-content: space-between;
   padding: 10px 10px;
   min-height: 70px;
+  background-color: #2d2d2d;
+  margin: 3px 0px;
 }
 
 .foodItem__text {

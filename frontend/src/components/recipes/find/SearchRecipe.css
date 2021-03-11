@@ -7,6 +7,13 @@
   background-color: #2d2d2d;
 }
 
+.searchRecipe__header {
+  margin: 0px 5px;
+  padding: 20px 0px;
+  text-align: center;
+  color: #fff;
+}
+
 .searchRecipe__footer {
   display: flex;
   flex-direction: column;

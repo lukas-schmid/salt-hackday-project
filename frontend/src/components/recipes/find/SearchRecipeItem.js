@@ -14,7 +14,6 @@ const SearchRecipeItem = ({ searchQuery }) => {
       .then((response) => response.json())
       .then((data) => {
         setApiResponse(data);
-        console.log(data);
       });
   }, [searchQuery]);
 

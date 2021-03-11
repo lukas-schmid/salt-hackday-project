@@ -9,6 +9,6 @@ test("SavedRecipes", () => {
       <SavedRecipes items={items} />
     </BrowserRouter>
   );
-  const listItems = screen.getAllByRole("article");
-  expect(listItems).toHaveLength(2);
+  const notFound = screen.getByText(/no recipes saved/i);
+  expect(notFound).toBeInTheDocument();
 });

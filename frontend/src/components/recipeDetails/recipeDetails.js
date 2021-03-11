@@ -68,7 +68,7 @@ const RecipeDetails = ({ match }) => {
           </ul>
         </section>
         <section className="recipeDetails__description">
-          {apiResponse.analyzedInstructions.length === 0 ? (
+          {apiResponse.analyzedInstructions?.length === 0 ? (
             <p>{apiResponse.instructions}</p>
           ) : (
             apiResponse.analyzedInstructions[0].steps.map((step, index) => {

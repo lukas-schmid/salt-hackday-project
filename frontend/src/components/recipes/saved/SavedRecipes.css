@@ -8,5 +8,8 @@
 }
 
 .savedRecipes__header {
+  margin: 0px 5px;
+  padding: 20px 0px;
+  text-align: center;
   color: #fff;
 }

@@ -20,7 +20,7 @@ const Footer = () => {
           <p className="footer__fridge--text">Recipes</p>
         </div>
       </Link>
-      <Link to="shoppinglist">
+      <Link to="/shoppinglist">
         <div className="footer__shoppingList">
           <ShoppingCartIcon className="footer__fridge--icon" />
           <p className="footer__fridge--text">Shopping List</p>

@@ -38,6 +38,9 @@ const Shopping = () => {
 
   return (
     <section className="shoppingPage">
+      <header className="shoppingPage__header">
+        <h1>Shopping List</h1>
+      </header>
       <InputForm handleFoodInput={handleFoodInput} />
       <ShoppingList items={foodStore} removeItem={removeItem} />
     </section>

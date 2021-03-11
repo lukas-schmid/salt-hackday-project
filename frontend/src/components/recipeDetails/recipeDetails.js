@@ -16,7 +16,7 @@ const RecipeDetails = ({ match }) => {
         setApiResponse(data);
         setIsLoading(false);
       });
-  }, [match.params.id]);
+  }, [id]);
 
   const saveRecipe = () => {
     const recipeData = apiResponse;

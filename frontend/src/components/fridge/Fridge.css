@@ -2,6 +2,10 @@
   background-color: #000;
 }
 
+.fridgePage__header {
+  color: #fff;
+}
+
 .fridgeInputForm {
   display: flex;
   flex-direction: column;

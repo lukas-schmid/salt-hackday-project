@@ -2,6 +2,10 @@
   background-color: #000;
 }
 
+.shoppingPage__header {
+  color: #fff;
+}
+
 .shoppingListInputForm {
   display: flex;
   flex-direction: column;

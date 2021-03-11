@@ -38,6 +38,9 @@ const Fridge = () => {
 
   return (
     <section className="fridgePage">
+      <header className="fridgePage__header">
+        <h1>Your Fridge</h1>
+      </header>
       <InputForm handleFoodInput={handleFoodInput} />
       <FoodList items={foodStore} removeItem={removeItem} />
     </section>

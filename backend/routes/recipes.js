@@ -8,7 +8,6 @@ const baseURL = "https://api.spoonacular.com/recipes";
 
 /* GET all recipes by ingredients. */
 router.get("/recipes/", async (req, res, next) => {
-  // query params banana%2C%2Bmilk%2C%2Bchocolate
   try {
     const query = req.query.ingredients;
     const url = `${baseURL}/findByIngredients?ingredients=${query}&apiKey=${key}`;
@@ -25,9 +24,6 @@ router.get("/recipes/", async (req, res, next) => {
 
 /* GET recipes by ID. */
 router.get("/recipes/:id/", async (req, res, next) => {
-  // id 200313 = should be Chocolate Cinnamon Ice Cream
-  // "id": 200313,
-  // "title": "Chocolate Cinnamon Ice Cream",
   try {
     const id = req.params.id;
     const url = `${baseURL}/${id}/information?includeNutrition=false&apiKey=${key}`;

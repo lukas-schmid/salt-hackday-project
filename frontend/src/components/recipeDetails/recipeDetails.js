@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { withRouter } from "react-router-dom";
 
-const RecipeDetails = () => {
+const RecipeDetails = ({ match }) => {
+  const [apiResponse, setApiResponse] = useState([]);
+
+  useEffect(() => {
+    const id = match.params.id;
+    fetch(`http://localhost:8080/api/recipes/${id}`)
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+    //.then((data) => setApiResponse(data));
+  }, [match.params.id]);
+
   return (
     <section className="recipeDetailsPage">
       <article className="recipeDetails">
@@ -25,4 +36,4 @@ const RecipeDetails = () => {
   );
 };
 
-export default RecipeDetails;
+export default withRouter(RecipeDetails);

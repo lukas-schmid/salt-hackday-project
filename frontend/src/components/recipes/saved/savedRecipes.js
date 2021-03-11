@@ -15,7 +15,9 @@ const SavedRecipes = () => {
       <header className="savedRecipes__header">
         <h1>Saved Recipes</h1>
       </header>
-      <SavedRecipeItem recipes={savedRecipes} />
+      <section className="savedRecipeList">
+        <SavedRecipeItem recipes={savedRecipes} />
+      </section>
     </section>
   );
 };

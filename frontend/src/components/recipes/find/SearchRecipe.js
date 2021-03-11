@@ -50,7 +50,11 @@ const SearchRecipe = ({ handleSearchQuery }) => {
         <Checkboxes isChecked={handleChange} items={availableFood} />
       </article>
       <footer className="searchRecipe__footer">
-        <button onClick={searchRecipe} type="button">
+        <button
+          className="searchRecipe__footer--button"
+          onClick={searchRecipe}
+          type="button"
+        >
           Search
         </button>
       </footer>

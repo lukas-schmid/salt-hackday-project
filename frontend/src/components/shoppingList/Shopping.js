@@ -43,9 +43,6 @@ const Shopping = () => {
       </header>
       <InputForm handleFoodInput={handleFoodInput} />
       <ShoppingList items={foodStore} removeItem={removeItem} />
-      <footer className="shoppingPage__footer">
-        <button className="shoppingPage__footer--button">Add to fridge</button>
-      </footer>
     </section>
   );
 };

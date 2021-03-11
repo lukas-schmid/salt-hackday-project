@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import InputForm from "./InputForm";
 import FoodList from "./FoodList";
-import { storeLocalStorage } from "../../helperFunctions/helperFunctions";
+import {
+  storeLocalStorage,
+  getLocalStorage,
+} from "../../helperFunctions/helperFunctions";
 import "./Fridge.css";
 
 const Fridge = () => {
@@ -17,10 +20,21 @@ const Fridge = () => {
     setFoodStore(newFoodStore);
   };
 
+  const isFirstRun = useRef(true);
   useEffect(() => {
+    if (isFirstRun.current) {
+      isFirstRun.current = false;
+      return;
+    }
     const strValue = foodStore.join(",");
     storeLocalStorage("fridge", strValue);
   }, [foodStore]);
+
+  useEffect(() => {
+    if (localStorage.getItem("fridge")) {
+      setFoodStore(getLocalStorage("fridge"));
+    }
+  }, []);
 
   return (
     <section className="fridgePage">

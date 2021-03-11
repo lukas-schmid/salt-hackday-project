@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import InputForm from "./InputForm";
 import ShoppingList from "./ShoppingList";
-import { storeLocalStorage } from "../../helperFunctions/helperFunctions";
+import {
+  storeLocalStorage,
+  getLocalStorage,
+} from "../../helperFunctions/helperFunctions";
 import "./Shopping.css";
 
 const Shopping = () => {
@@ -17,10 +20,21 @@ const Shopping = () => {
     setFoodStore(newFoodStore);
   };
 
+  const isFirstRun = useRef(true);
   useEffect(() => {
+    if (isFirstRun.current) {
+      isFirstRun.current = false;
+      return;
+    }
     const strValue = foodStore.join(",");
     storeLocalStorage("shoppingList", strValue);
   }, [foodStore]);
+
+  useEffect(() => {
+    if (localStorage.getItem("shoppingList")) {
+      setFoodStore(getLocalStorage("shoppingList"));
+    }
+  }, []);
 
   return (
     <section className="shoppingPage">

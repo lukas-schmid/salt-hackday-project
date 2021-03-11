@@ -1,10 +1,10 @@
 import React from "react";
 import ShoppingItem from "./ShoppingItem";
 
-const ShoppingList = () => {
+const ShoppingList = ({ items, removeItem }) => {
   return (
     <section className="shoppingList">
-      <ShoppingItem />
+      <ShoppingItem items={items} removeItem={removeItem} />
     </section>
   );
 };

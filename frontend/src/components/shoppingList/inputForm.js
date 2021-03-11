@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
-const InputForm = () => {
+const InputForm = ({ handleFoodInput }) => {
+  const [input, setInput] = useState("");
+
+  const handleInput = (e) => {
+    setInput(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleFoodInput(input);
+    setInput("");
+    e.target.reset();
+  };
   return (
     <section className="shoppingListInput">
-      <form className="shoppingListInputForm">
+      <form className="shoppingListInputForm" onSubmit={handleSubmit}>
         <label className="shoppingListInputForm__label" htmlFor="item">
           Add food
         </label>
@@ -13,6 +25,8 @@ const InputForm = () => {
             type="text"
             name="item"
             id="item"
+            autoComplete="off"
+            onChange={handleInput}
           />
           <button className="shoppingListInputForm__button" type="submit">
             +

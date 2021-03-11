@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Checkboxes({ items }) {
+function Checkboxes({ isChecked, items }) {
+  const handleCheck = (e) => {
+    isChecked(e);
+  };
+
   return items.length === 0
     ? null
     : items.map((food, index) => {
@@ -11,6 +15,7 @@ function Checkboxes({ items }) {
               id={`food_${index}`}
               name={`foodItem_${index}`}
               value={food}
+              onChange={handleCheck}
             />
             <label htmlFor={`food_${index}`}> {food}</label>
           </div>

@@ -5,6 +5,34 @@ import "./SearchRecipe.css";
 
 const SearchRecipe = () => {
   const [availableFood, setAvailableFood] = useState([]);
+  const [searchQuery, setSearchQuery] = useState([]);
+  const [checkedItems, setCheckedItems] = useState([]);
+
+  const handleChange = (e) => {
+    const id = e.target.id;
+    const name = e.target.value;
+    const isChecked = e.target.checked;
+    if (!checkedItems.some((item) => item.id === id)) {
+      setCheckedItems([...checkedItems, { id, name, isChecked }]);
+    } else {
+      const index = checkedItems.findIndex((obj) => obj.id === id);
+      const newArray = [...checkedItems];
+      const item = { id, name, isChecked };
+      newArray[index] = item;
+      setCheckedItems(newArray);
+    }
+  };
+
+  const searchRecipe = () => {
+    console.log(
+      checkedItems.filter((isChecked) => isChecked.isChecked === true)
+    );
+  };
+
+  // deleteCheckboxState = (name, checked) => {
+  //     const updateChecked = checked == null ? true : false;
+  //     this.setState(prevState => prevState.checkedItems.set(name, updateChecked));
+  // };
 
   useEffect(() => {
     setAvailableFood(getLocalStorage("fridge"));
@@ -25,10 +53,12 @@ const SearchRecipe = () => {
           />
           <label htmlFor="selectAll">Select All</label>
         </div>
-        <Checkboxes items={availableFood} />
+        <Checkboxes isChecked={handleChange} items={availableFood} />
       </article>
       <footer className="searchRecipe__footer">
-        <button type="button">Search</button>
+        <button onClick={searchRecipe} type="button">
+          Search
+        </button>
       </footer>
     </>
   );

@@ -1,8 +1,9 @@
 .shoppingPage {
-  background-color: #000;
+  height: 100%;
+  padding: 8px 8px;
 }
 
-.shoppingPage__header {
+/* .shoppingPage__header {
   margin: 0px 5px;
   padding: 20px 0px;
   text-align: center;
@@ -88,4 +89,4 @@
   color: #fff;
   background-color: red;
   border: none;
-}
+} */

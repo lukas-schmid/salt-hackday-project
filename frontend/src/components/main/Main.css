@@ -1,38 +1,36 @@
-.app__main {
-  /* position: absolute; */
-  /* width: 100%; */
-  position: absolute;
-  top: 60px;
-  bottom: 60px;
-  left: 0px;
-  right: 0px;
-  overflow: hidden;
-  background-color: #000;
-}
-
 .mainPage {
+  height: 100%;
+  padding: 8px 8px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  /* height: 100vh; */
-  /* align-items: center; */
-  background-color: #000;
 }
 
 .mainPage__fridge {
   margin: 10px 10px;
-  /* height: 100%; */
-  /* width: 100%; */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  background-color: #2d2d2d;
 }
 
 .mainPage__recipes {
   margin: 10px 10px;
-  /* height: 100%; */
-  /* width: 100%; */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  background-color: #2d2d2d;
 }
 
 .mainPage__shoppingList {
   margin: 10px 10px;
-  /* height: 100%; */
-  /* width: 100%; */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  background-color: #2d2d2d;
 }

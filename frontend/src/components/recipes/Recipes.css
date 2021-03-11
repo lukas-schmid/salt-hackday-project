@@ -1,4 +1,4 @@
-.mainPage {
+.recipesPage {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -7,19 +7,13 @@
   background-color: #000;
 }
 
-.mainPage__fridge {
+.recipesPage__savedRecipes {
   margin: 10px 10px;
   /* height: 100%; */
   /* width: 100%; */
 }
 
-.mainPage__recipes {
-  margin: 10px 10px;
-  /* height: 100%; */
-  /* width: 100%; */
-}
-
-.mainPage__shoppingList {
+.recipesPage__findRecipes {
   margin: 10px 10px;
   /* height: 100%; */
   /* width: 100%; */

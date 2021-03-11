@@ -16,7 +16,7 @@ const Navbar = () => {
         <img className="navbar__header--logo" src={logo} alt="logo" />
         <h1 className="navbar__header--name">Food-App</h1>
       </div>
-      <div className="navbar__header--theme">theme</div>
+      <div className="navbar__theme">theme</div>
     </nav>
   );
 };

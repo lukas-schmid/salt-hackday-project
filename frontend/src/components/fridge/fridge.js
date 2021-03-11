@@ -1,6 +1,7 @@
 import React from "react";
 import InputForm from "./InputForm";
 import FoodList from "./FoodList";
+import "./Fridge.css";
 
 const Fridge = () => {
   return (

@@ -1,8 +1,35 @@
 .app__navbar {
-  background-color: grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 5px 5px;
+  background-color: #000;
+}
+.navbar__home--icon {
+  font-size: 50px !important;
+  color: #fff;
+}
+
+.navbar__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .navbar__header--logo {
-  width: 50px;
-  height: auto;
+  width: 40px;
+  height: 40px;
+}
+
+.navbar__header--name {
+  height: 38px;
+  padding: 0px 5px;
+  font-size: 30px;
+  color: #fff;
+}
+
+.navbar__theme {
+  color: #fff;
 }

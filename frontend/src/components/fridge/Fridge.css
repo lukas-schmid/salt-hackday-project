@@ -1,0 +1,68 @@
+.fridgePage {
+  background-color: #000;
+}
+
+.fridgeInputForm {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 5px;
+  padding: 10px 10px;
+  min-height: 90px;
+  background-color: #2d2d2d;
+  color: #fff;
+}
+
+.fridgeInputForm__label {
+  margin: 5px 0px;
+  font-size: 25px;
+}
+
+.fridgeInputForm--verticalAlign {
+  display: flex;
+  flex-direction: row;
+  margin: 5px 0px;
+}
+
+.fridgeInputForm__input {
+  display: flex;
+  flex: 1;
+}
+
+.fridgeInputForm__button {
+  width: 50px;
+  height: 50px;
+}
+
+.fridgeList {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 5px;
+  background-color: #2d2d2d;
+  color: #fff;
+}
+
+.foodItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px;
+  min-height: 70px;
+}
+.foodItem__image {
+  width: 60px;
+  height: 60px;
+  margin: 5px 5px;
+}
+
+.foodItem__text {
+  margin: 5px 5px;
+  font-size: 25px;
+}
+
+.foodItem__remove--button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+}

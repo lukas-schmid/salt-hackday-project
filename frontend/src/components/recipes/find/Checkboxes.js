@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 function Checkboxes({ isChecked, items }) {
   const handleCheck = (e) => {

@@ -3,9 +3,8 @@ import Checkboxes from "./Checkboxes";
 import { getLocalStorage } from "../../../helperFunctions/helperFunctions";
 import "./SearchRecipe.css";
 
-const SearchRecipe = () => {
+const SearchRecipe = ({ handleSearchQuery }) => {
   const [availableFood, setAvailableFood] = useState([]);
-  const [searchQuery, setSearchQuery] = useState([]);
   const [checkedItems, setCheckedItems] = useState([]);
 
   const handleChange = (e) => {
@@ -24,15 +23,10 @@ const SearchRecipe = () => {
   };
 
   const searchRecipe = () => {
-    console.log(
+    handleSearchQuery(
       checkedItems.filter((isChecked) => isChecked.isChecked === true)
     );
   };
-
-  // deleteCheckboxState = (name, checked) => {
-  //     const updateChecked = checked == null ? true : false;
-  //     this.setState(prevState => prevState.checkedItems.set(name, updateChecked));
-  // };
 
   useEffect(() => {
     setAvailableFood(getLocalStorage("fridge"));

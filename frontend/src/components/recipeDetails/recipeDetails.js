@@ -8,21 +8,38 @@ const RecipeDetails = ({ match }) => {
     const id = match.params.id;
     fetch(`http://localhost:8080/api/recipes/${id}`)
       .then((response) => response.json())
-      .then((data) => console.log(data));
-    //.then((data) => setApiResponse(data));
+      .then((data) => {
+        setApiResponse(data);
+        console.log(data);
+      });
   }, [match.params.id]);
 
   return (
     <section className="recipeDetailsPage">
       <article className="recipeDetails">
         <header className="recipeDetails__header">
-          <h1 className="recipeDetails__header--h1">Recipe Title</h1>
+          <h1 className="recipeDetails__header--h1">{apiResponse.title}</h1>
         </header>
         <section className="recipeDetails__image">
-          <img src="" alt="" />
+          <img src={apiResponse.image} alt={apiResponse.title} />
+        </section>
+        <section className="recipeDetails__ingredients">
+          <ul>
+            {apiResponse.extendedIngredients.length === 0
+              ? null
+              : apiResponse.extendedIngredients.map((ingredient, index) => {
+                  return <li key={index}>{ingredient.original}</li>;
+                })}
+          </ul>
         </section>
         <section className="recipeDetails__description">
-          <p>description / ingredients etc...</p>
+          {apiResponse.analyzedInstructions.length !== 0 ? (
+            apiResponse.analyzedInstructions[0]?.steps.map((step, index) => {
+              return <p key={index}>{step.step}</p>;
+            })
+          ) : (
+            <p>{apiResponse.instructions}</p>
+          )}
         </section>
         <section className="recipeDetails__missingIngredients">
           <p>list of missing ingredients</p>

@@ -49,11 +49,6 @@
   padding: 10px 10px;
   min-height: 70px;
 }
-.foodItem__image {
-  width: 60px;
-  height: 60px;
-  margin: 5px 5px;
-}
 
 .foodItem__text {
   margin: 5px 5px;

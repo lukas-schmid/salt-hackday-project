@@ -1,10 +1,10 @@
 import React from "react";
 import FoodItem from "./FoodItem";
 
-const FoodList = () => {
+const FoodList = ({ items, removeItem }) => {
   return (
     <section className="fridgeList">
-      <FoodItem />
+      <FoodItem items={items} removeItem={removeItem} />
     </section>
   );
 };

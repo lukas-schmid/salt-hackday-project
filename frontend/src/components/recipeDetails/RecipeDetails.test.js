@@ -1,10 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import RecipeDetails from "./RecipeDetails";
+import { BrowserRouter } from "react-router-dom";
 
 test("RecipeDetails", () => {
-  render(<RecipeDetails />);
-  const recipeImg = screen.getByRole("img");
-  const saveButton = screen.getAllByRole("button");
-  expect(recipeImg).toBeInTheDocument();
-  expect(saveButton[0]).toBeInTheDocument();
+  render(
+    <BrowserRouter>
+      <RecipeDetails />
+    </BrowserRouter>
+  );
+  const loading = screen.getByText(/loading/i);
+  expect(loading).toBeInTheDocument();
 });

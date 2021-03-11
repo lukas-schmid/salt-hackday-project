@@ -1,20 +1,38 @@
 import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
+import {
+  getLocalStorage,
+  storeLocalStorage,
+} from "../../helperFunctions/helperFunctions";
 
 const RecipeDetails = ({ match }) => {
   const [apiResponse, setApiResponse] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
+  const id = match.params.id;
   useEffect(() => {
-    const id = match.params.id;
     fetch(`http://localhost:8080/api/recipes/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setApiResponse(data);
         setIsLoading(false);
-        console.log(data);
       });
   }, [match.params.id]);
+
+  const saveRecipe = () => {
+    const recipeData = apiResponse;
+    recipeData.missing = getLocalStorage("missing");
+    if (!localStorage.getItem("savedRecipes")) {
+      storeLocalStorage("savedRecipes", JSON.stringify(recipeData));
+    } else if (
+      [localStorage.getItem("savedRecipes")].filter((obj) => obj.id === id)
+        .length === 0
+    ) {
+      const recipesArr = [JSON.parse(localStorage.getItem("savedRecipes"))];
+      recipesArr.push(recipeData);
+      console.log(recipesArr);
+      storeLocalStorage("savedRecipes", JSON.stringify(recipesArr));
+    }
+  };
 
   return isLoading ? (
     <p>loading...</p>
@@ -40,9 +58,9 @@ const RecipeDetails = ({ match }) => {
         </section>
         <section className="recipeDetails__description">
           <button
-            onClick={() =>
-              console.log(apiResponse.analyzedInstructions.length === 0)
-            }
+            onClick={() => {
+              saveRecipe();
+            }}
           >
             test
           </button>

@@ -39,6 +39,8 @@
 
 .fridgeInputForm__input {
   width: 100%;
+  padding: 0px 5px;
+  font-size: 21px;
 }
 
 .fridgeInputForm__button {

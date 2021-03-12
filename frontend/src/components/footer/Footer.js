@@ -5,7 +5,7 @@ import KitchenIcon from "@material-ui/icons/Kitchen";
 import ReceiptIcon from "@material-ui/icons/Receipt";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
-const Footer = () => {
+const Footer = ({ shoppingCounter }) => {
   return (
     <footer className="app__footer">
       <Link to="/fridge">
@@ -22,6 +22,7 @@ const Footer = () => {
       </Link>
       <Link to="/shoppinglist">
         <div className="footer__shoppingList">
+          <div className="shoppingListCounter"></div>
           <ShoppingCartIcon className="footer__fridge--icon" />
           <p className="footer__fridge--text">Shopping List</p>
         </div>

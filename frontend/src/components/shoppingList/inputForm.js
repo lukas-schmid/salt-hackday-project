@@ -4,7 +4,11 @@ const InputForm = ({ handleFoodInput }) => {
   const [input, setInput] = useState("");
 
   const handleInput = (e) => {
-    setInput(e.target.value);
+    const item = {
+      name: e.target.value,
+      done: false,
+    };
+    setInput(item);
   };
 
   const handleSubmit = (e) => {

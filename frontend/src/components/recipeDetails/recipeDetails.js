@@ -36,13 +36,19 @@ const RecipeDetails = ({ match }) => {
 
   const addToShoppingList = () => {
     const missingIngredients = getLocalStorage("missing");
+    const shoppingListObjArr = missingIngredients.map((item) => {
+      return {
+        name: item,
+        done: false,
+      };
+    });
     if (localStorage.getItem("shoppingList")) {
-      const shoppingList = getLocalStorage("shoppingList");
-      const strValue = shoppingList.concat(missingIngredients).join(",");
-      storeLocalStorage("shoppingList", strValue);
+      const shoppingList = JSON.parse(localStorage.getItem("shoppingList"));
+      const strValue = shoppingList.concat(shoppingListObjArr);
+      storeLocalStorage("shoppingList", JSON.stringify(strValue));
     } else {
       const strValue = missingIngredients.join(",");
-      storeLocalStorage("shoppingList", strValue);
+      storeLocalStorage("shoppingList", JSON.stringify(shoppingListObjArr));
     }
   };
 

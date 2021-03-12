@@ -64,9 +64,15 @@
   background-color: #2d2d2d;
 }
 
+.shoppingItem__done--true {
+  border-left: 8px solid #00ff00;
+  background-color: #232323;
+}
+
 .shoppingItem__text {
   padding: 10px 10px;
   margin-left: 10px;
+  width: 100%;
   font-size: 28px;
   color: #fff;
 }
@@ -85,6 +91,30 @@
   border-radius: 50%;
   font-size: 22px;
   background-color: #ff0000;
+}
+
+.shoppingItem__remove--button--done--true {
+  background-color: #00ff00;
+}
+
+.shoppingPage__footer {
+  display: flex;
+  height: 85px;
+  margin: 5px 0px;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  line-height: 70px;
+  background-color: #2d2d2d;
+}
+
+.shoppingPage__footer--button {
+  margin: 10px 10px;
+  flex: 1 1;
+  background-color: #00ff00;
+  border: none;
+  font-size: 30px;
+  color: #000;
 }
 
 /* .shoppingPage__header {

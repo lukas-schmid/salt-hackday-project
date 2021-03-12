@@ -5,9 +5,9 @@ const SavedRecipeItem = ({ recipes }) => {
   return recipes.length === 0 ? (
     <p>no recipes saved</p>
   ) : (
-    recipes.map((recipe) => {
+    recipes.map((recipe, index) => {
       return (
-        <article className="savedRecipe">
+        <article key={index} className="savedRecipe">
           <div className="savedRecipe__image">
             <img src={recipe.image} alt={recipe.title} />
           </div>

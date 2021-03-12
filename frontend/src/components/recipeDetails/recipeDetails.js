@@ -47,7 +47,7 @@ const RecipeDetails = ({ match }) => {
       const strValue = shoppingList.concat(shoppingListObjArr);
       storeLocalStorage("shoppingList", JSON.stringify(strValue));
     } else {
-      const strValue = missingIngredients.join(",");
+      //const strValue = missingIngredients.join(",");
       storeLocalStorage("shoppingList", JSON.stringify(shoppingListObjArr));
     }
   };

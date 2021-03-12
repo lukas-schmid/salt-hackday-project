@@ -1,6 +1,6 @@
 import React from "react";
 
-function Checkboxes({ isChecked, items }) {
+function Checkboxes({ isChecked, items, allCheck }) {
   const handleCheck = (e) => {
     isChecked(e);
   };
@@ -16,6 +16,7 @@ function Checkboxes({ isChecked, items }) {
               name={`foodItem_${index}`}
               value={food}
               onChange={handleCheck}
+              {...allCheck}
             />
             <label htmlFor={`food_${index}`}> {food}</label>
           </div>

@@ -18,3 +18,11 @@ a {
   overflow: hidden;
   background-color: #000;
 }
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  transform: scale(0.98);
+}

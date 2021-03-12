@@ -6,6 +6,7 @@ import "./SearchRecipe.css";
 const SearchRecipe = ({ handleSearchQuery }) => {
   const [availableFood, setAvailableFood] = useState([]);
   const [checkedItems, setCheckedItems] = useState([]);
+  const [checkAll, setCheckAll] = useState({});
 
   const handleChange = (e) => {
     const id = e.target.id;
@@ -28,6 +29,12 @@ const SearchRecipe = ({ handleSearchQuery }) => {
     );
   };
 
+  const handleCheckAll = () => {
+    Object.keys(checkAll).length === 0
+      ? setCheckAll({ checked: true })
+      : setCheckAll({});
+  };
+
   useEffect(() => {
     setAvailableFood(getLocalStorage("fridge"));
   }, []);
@@ -44,10 +51,15 @@ const SearchRecipe = ({ handleSearchQuery }) => {
             id="selectAll"
             name="selectAll"
             value="selectAll"
+            onChange={() => handleCheckAll()}
           />
           <label htmlFor="selectAll">Select All</label>
         </div>
-        <Checkboxes isChecked={handleChange} items={availableFood} />
+        <Checkboxes
+          isChecked={handleChange}
+          items={availableFood}
+          allCheck={checkAll}
+        />
       </article>
       <footer className="searchRecipe__footer">
         <button

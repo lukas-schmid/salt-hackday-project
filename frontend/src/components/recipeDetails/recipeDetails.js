@@ -4,6 +4,7 @@ import {
   getLocalStorage,
   storeLocalStorage,
 } from "../../helperFunctions/helperFunctions";
+import "./RecipeDetails.css";
 
 const RecipeDetails = ({ match }) => {
   const [apiResponse, setApiResponse] = useState([]);
@@ -57,6 +58,7 @@ const RecipeDetails = ({ match }) => {
           <img src={apiResponse.image} alt={apiResponse.title} />
         </section>
         <section className="recipeDetails__ingredients">
+          <h3 className="recipeDetails__description--header">Ingredients</h3>
           <ul>
             {apiResponse.extendedIngredients?.length === 0 ? (
               <p>no ingredients available</p>
@@ -68,6 +70,7 @@ const RecipeDetails = ({ match }) => {
           </ul>
         </section>
         <section className="recipeDetails__description">
+          <h3 className="recipeDetails__description--header">Instructions</h3>
           {apiResponse.analyzedInstructions?.length === 0 ? (
             <p>{apiResponse.instructions}</p>
           ) : (
@@ -77,9 +80,16 @@ const RecipeDetails = ({ match }) => {
           )}
         </section>
         <section className="recipeDetails__missingIngredients">
-          <p>list of missing ingredients</p>
+          <h3 className="recipeDetails__description--header">
+            Missing Ingredients
+          </h3>
+          <ul>
+            {getLocalStorage("missing").map((item, index) => {
+              return <li key={index}>{item}</li>;
+            })}
+          </ul>
         </section>
-        <footer className="recipeDetails__description">
+        <footer className="recipeDetails__buttons">
           <button onClick={() => addToShoppingList()} type="button">
             Add to shopping list
           </button>

@@ -8,7 +8,7 @@ const SearchResults = ({ query }) => {
       <header className="searchResult__header">
         <h1>Best Matching Results</h1>
       </header>
-      <section className="SearchRecipeList">
+      <section className="searchRecipeList">
         <SearchRecipeItem searchQuery={query} />
       </section>
     </>

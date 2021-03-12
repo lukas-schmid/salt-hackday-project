@@ -31,18 +31,18 @@ const SearchRecipeItem = ({ searchQuery }) => {
     ? null
     : apiResponse.map((data) => {
         return (
-          <article key={data.id} className="SearchRecipeItem">
-            <div className="SearchRecipeItem__image">
+          <article key={data.id} className="searchRecipeItem">
+            <div className="searchRecipeItem__image">
               <img src={data.image} alt={data.title} />
             </div>
-            <div className="SearchRecipeItem__info">
-              <p className="SearchRecipeItem__info--name">{data.title}</p>
+            <div className="searchRecipeItem__info">
+              <p className="searchRecipeItem__info--name">{data.title}</p>
               <Link
                 to={`/recipe/${data.id}`}
                 onClick={() => saveMissingIngredients(data.id)}
               >
                 <button
-                  className="SearchRecipeItem__info--button"
+                  className="searchRecipeItem__info--button"
                   type="button"
                 >
                   Open

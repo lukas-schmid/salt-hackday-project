@@ -45,6 +45,6 @@ Mainly for mobile view, desktop version not optimized yet
 
 ## Preview
 
-| ![](preview-video.mov) |
+| ![](preview-video.mp4) |
 | :--------------------: |
 |   Preview of the app   |

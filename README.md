@@ -45,6 +45,6 @@ Mainly for mobile view, desktop version not optimized yet
 
 ## Preview
 
-| ![](preview-video.mp4) |
-| :--------------------: |
-|   Preview of the app   |
+| [![App-Preview](preview-pic.png)](https://user-images.githubusercontent.com/70095024/111065084-21bfd100-84b8-11eb-8494-0c80cbff434e.mp4 "Click to watch the demo") |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                                         Preview of the app                                                                         |

@@ -28,6 +28,15 @@ You can run npm run dev in root folder to start both, backend on localhost:8080 
 npm run dev
 ```
 
+## API Key
+
+I'm using the API from 
+https://spoonacular.com/food-api
+[](https://spoonacular.com/food-api)
+
+Create an .env file in your backend folder and add the key there. 
+API_KEY=xxxxx
+
 ## Tests
 
 There are some tests set up on backend and frontend

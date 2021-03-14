@@ -45,7 +45,7 @@ Mainly for mobile view, desktop version not optimized yet
 
 ## Preview
 
-Click om the picture to watch a short demo video.
+Click on the picture to watch a short demo video.
 
 | <a href="https://user-images.githubusercontent.com/70095024/111065084-21bfd100-84b8-11eb-8494-0c80cbff434e.mp4"><img width="250" alt="preview-pic" src="https://user-images.githubusercontent.com/70095024/111065839-166ea480-84bc-11eb-838f-1da6b96d8ca3.png"></a> |
 | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |

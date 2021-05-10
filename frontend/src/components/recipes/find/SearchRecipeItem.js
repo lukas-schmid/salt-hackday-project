@@ -10,7 +10,7 @@ const SearchRecipeItem = ({ searchQuery }) => {
 
   useEffect(() => {
     const encodedQuery = convertQuerytoURL(searchQuery);
-    fetch(`http://localhost:8080/api/recipes?ingredients=${encodedQuery}`)
+    fetch(`/api/recipes?ingredients=${encodedQuery}`)
       .then((response) => response.json())
       .then((data) => {
         setApiResponse(data);

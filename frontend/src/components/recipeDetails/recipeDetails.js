@@ -11,7 +11,7 @@ const RecipeDetails = ({ match }) => {
   const [isLoading, setIsLoading] = useState(true);
   const id = match.params.id;
   useEffect(() => {
-    fetch(`http://localhost:8080/api/recipes/${id}`)
+    fetch(`/api/recipes/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setApiResponse(data);

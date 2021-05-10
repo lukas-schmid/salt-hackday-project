@@ -45,6 +45,7 @@
 }
 
 .recipeDetails__buttons > button {
+  height: 35px;
   padding: 0px 10px;
   margin-left: 10px;
   font-size: 15px;

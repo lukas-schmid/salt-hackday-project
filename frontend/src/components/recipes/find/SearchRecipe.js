@@ -29,11 +29,11 @@ const SearchRecipe = ({ handleSearchQuery }) => {
     );
   };
 
-  const handleCheckAll = () => {
-    Object.keys(checkAll).length === 0
-      ? setCheckAll({ checked: true })
-      : setCheckAll({});
-  };
+  // const handleCheckAll = () => {
+  //   Object.keys(checkAll).length === 0
+  //     ? setCheckAll({ checked: true })
+  //     : setCheckAll({});
+  // };
 
   useEffect(() => {
     setAvailableFood(getLocalStorage("fridge"));
@@ -45,7 +45,7 @@ const SearchRecipe = ({ handleSearchQuery }) => {
         <h1>Select ingredients</h1>
       </header>
       <article className="searchRecipe__checkboxList">
-        <div className="searchRecipe__checkboxList--row">
+        {/* <div className="searchRecipe__checkboxList--row">
           <input
             type="checkbox"
             id="selectAll"
@@ -54,7 +54,7 @@ const SearchRecipe = ({ handleSearchQuery }) => {
             onChange={() => handleCheckAll()}
           />
           <label htmlFor="selectAll">Select All</label>
-        </div>
+        </div> */}
         <Checkboxes
           isChecked={handleChange}
           items={availableFood}
